@@ -3,28 +3,28 @@ const path = require ('path');
 const bodyparser=require('body-parser');
 const cors = require('cors');
 
-const nav= [
-    {
-        link:"/books",
-        title:"Books"
-    },
-    {
-        link:"/authors",
-        title:"Authors"
-    },
-    {
-        link:"/addbook",
-        title:"Add Book"
-    },
-    {
-        link:"/addauthor",
-        title:"Add Author"
-    }
-]
+//const nav= [
+   // {
+        //link:"/books",
+       // title:"Books"
+    //},
+    //{
+        //link:"/authors",
+        //title:"Authors"
+    //},
+    //{
+       // link:"/addbook",
+       // title:"Add Book"
+    //},
+    //{
+       // link:"/addauthor",
+       // title:"Add Author"
+    //}
+//]
 
 const loginRouter = require('./src/routes/loginroute');
 const signupRouter = require('./src/routes/signuproute');
-const homeRouter = require('./src/routes/homeroute');
+const homeRouter = require('./src/routes/homerouter');
 const booksRouter = require('./src/routes/booksroute');
 const authorsRouter = require('./src/routes/authorsroute');
 
@@ -57,4 +57,6 @@ app.get('/',function(req,res){
 
 
 
-app.listen(5000);
+app.listen(5000, ()=>{
+    console.log("Server Ready on 3000");
+});

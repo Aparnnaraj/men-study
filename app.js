@@ -1,5 +1,6 @@
 const express = require('express'); 
 const path = require ('path'); 
+const bodyparser=require('body-parser');
 const cors = require('cors');
 
 const nav= [
@@ -33,8 +34,8 @@ const app = new express;
 app.set('views','./src/views'); 
 app.set('view engine','ejs'); 
 
-
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(cors());
+app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname , '/public'))); 
 
@@ -56,6 +57,4 @@ app.get('/',function(req,res){
 
 
 
-app.listen(5000,()=>{
-    console.log("Server Ready on 3000");
-});
+app.listen(5000);
